@@ -8,18 +8,23 @@ use App\Models\Codigo;
 
 class CodigoController extends Controller
 {
-    public function __construct(Codigo $codigo) {
+    public function __construct(Codigo $codigo)
+    {
         $this->codigo = $codigo;
     }
 
-    public function buscarCodigo() {
+    public function buscarCodigo()
+    {
         try {
-            $codigo = $this->codigo->all();
+            cache([
+                'codigo' =>
+                $this->codigo->all()
+            ], 1800);
         } catch (\Exception $e) {
             $error = "Erro de conexão com o banco de dados: " . $e;
             return response()->json($error, 500);
         }
 
-        return response()->json($codigo, 200);
+        return response()->json(cache('codigo'), 200);
     }
 }

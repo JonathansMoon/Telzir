@@ -1,16 +1,19 @@
 <?php
+
 namespace App\Repositories;
 
 use Cache;
 use App\Repositories\AbstractRepository;
 
-class PlanoRepository extends AbstractRepository {
+class PlanoRepository extends AbstractRepository
+{
 
-    public function getResult() {
+    public function getResult()
+    {
         cache([
             'plano' =>
             $this->model->first()->minutos
-        ], 60);
+        ], 1800);
 
         return cache('plano');
     }

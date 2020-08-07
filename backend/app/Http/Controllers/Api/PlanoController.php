@@ -8,18 +8,23 @@ use App\Models\Plano;
 
 class PlanoController extends Controller
 {
-    public function __construct(Plano $plano) {
+    public function __construct(Plano $plano)
+    {
         $this->plano = $plano;
     }
 
-    public function buscarPlano() {
+    public function buscarPlano()
+    {
         try {
-            $plano = $this->plano->all();
+            cache([
+                'plano' =>
+                $this->plano->all()
+            ], 1800);
         } catch (\Exception $e) {
             $error = "Erro de conexão com o banco de dados: " . $e;
             return response()->json($error, 500);
         }
 
-        return response()->json($plano, 200);
+        return response()->json(cache('plano'), 200);
     }
 }

@@ -1,16 +1,19 @@
 <?php
+
 namespace App\Repositories;
 
 use Cache;
 use App\Repositories\AbstractRepository;
 
-class TaxaRepository extends AbstractRepository {
+class TaxaRepository extends AbstractRepository
+{
 
-    public function getResult() {
+    public function getResult()
+    {
         cache([
-            'taxa'=>
+            'taxa' =>
             $this->model->first()->taxa
-        ], 60);
+        ], 1800);
 
         return cache('taxa');
     }

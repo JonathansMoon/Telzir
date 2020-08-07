@@ -7,7 +7,7 @@ echo Entrando na pasta backend
 sudo docker-compose up -d
 
 echo Executando run.sh
-chmod +x ./run.sh
+sudo chmod +x ./run.sh
 sudo ./run.sh
 
 echo Entrando na pasta frontend
