@@ -28,13 +28,15 @@ export default function Form({ navigation: { navigate } }) {
     fetchData();
   }, []);
 
-  const sendData = async (consulta) => {
-    const resLigacao = await api.get(`/ligacoes?${consulta}`);
-    setLigacao(resLigacao.data);
+  useEffect(() => {
     navigate('Card', {
       screen: 'Home',
       params: { ligacao },
     });
+  }, [ligacao]);
+  const sendData = async (consulta) => {
+    const resLigacao = await api.get(`/ligacoes?${consulta}`);
+    setLigacao(resLigacao.data);
     Keyboard.dismiss();
   };
 
