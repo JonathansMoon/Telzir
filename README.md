@@ -82,6 +82,11 @@ $ sudo ./run.sh
 $ yarn start
 
 # To start the mobile project do the following:
+# Open the api file inside services
+# Replace 'meuIP' with your PC's IP
+# Press ctrl + O to save
+$ nano mobile/src/services/api.js
+
 $ yarn start
 
 # To run tests on the backend, perform the following:
