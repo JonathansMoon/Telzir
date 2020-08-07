@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/JonathansMoon/files/blob/master/images/GameKing.jpg">
+  <img src="https://github.com/JonathansMoon/files/blob/master/images/Telzir.png">
 </p>
 
 ## :computer: Technologies
@@ -50,7 +50,7 @@ This project was developed at the [Jonathan's Moon](#) with the following techno
 - [prettier](https://prettier.io/)
 - [eslint](https://eslint.org/)
 
-## :computer: Technologies
+## :pencil2: Methodologies
 
 This project was developed at the [Jonathan's Moon](#) with the following Design Patterns:
 
@@ -92,6 +92,8 @@ $ php artisan test
 # Execute to stop execution in backend
 $ sudo docker-compose down
 ```
+
+Project Figma [Get in touch!](https://www.figma.com/file/fDoVp3BH0xjsDCFL9x7HDx/Untitled?node-id=0%3A1)
 
 ## :memo: License
 
